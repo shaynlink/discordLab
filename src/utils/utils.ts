@@ -18,10 +18,10 @@ export function authorization(auth: string, isBot: boolean = true): string {
  */
 export function deconstructSnowflake(snowflake: string): SnowflakeObject {
   const bigInt = BigInt(snowflake);
-  const timestamp = (bigInt >> BigInt(22)) + BigInt(discordEpoch);
-  const internalWorkerId = (bigInt & BigInt(0x3E0000)) >> BigInt(17);
-  const internalProcessId = (bigInt & BigInt(0x1F000)) >> BigInt(12);
-  const increment = bigInt & BigInt(0xFFF);
+  const timestamp = (bigInt >> 22n) + BigInt(discordEpoch);
+  const internalWorkerId = (bigInt & 0x3E0000n) >> 17n;
+  const internalProcessId = (bigInt & 0x1F000n) >> 12n;
+  const increment = bigInt & 0xFFFn;
   return {
     timestamp: Number(timestamp),
     internalWorkerId: Number(internalWorkerId),
