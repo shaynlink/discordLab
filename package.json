@@ -1,0 +1,36 @@
+{
+  "name": "discordlib",
+  "version": "1.0.0",
+  "description": "Discord library for nodejs",
+  "main": "dist/index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shaynlink/discordLib.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "shaynlink",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shaynlink/discordLib/issues"
+  },
+  "homepage": "https://github.com/shaynlink/discordLib#readme",
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.2",
+    "typescript": "^4.6.4"
+  }
+}
