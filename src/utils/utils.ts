@@ -1,5 +1,5 @@
 import {discordEpoch} from './constants';
-import {SnowflakeObject} from '../interfaces/SnowflakeInterface';
+import {SnowflakeInterface} from '../interfaces/SnowflakeInterface';
 
 /**
  * Authorization header
@@ -14,9 +14,9 @@ export function authorization(auth: string, isBot: boolean = true): string {
 /**
  * Deconstruct snowflake to object
  * @param {string} snowflake - Snowflake string
- * @return {SnowflakeObject}
+ * @return {SnowflakeInterface}
  */
-export function deconstructSnowflake(snowflake: string): SnowflakeObject {
+export function deconstructSnowflake(snowflake: string): SnowflakeInterface {
   const bigInt = BigInt(snowflake);
   const timestamp = (bigInt >> 22n) + BigInt(discordEpoch);
   const internalWorkerId = (bigInt & 0x3E0000n) >> 17n;
@@ -28,4 +28,24 @@ export function deconstructSnowflake(snowflake: string): SnowflakeObject {
     internalProcessId: Number(internalProcessId),
     increment: Number(increment),
   };
+}
+
+/**
+ * Generate snowflake from timestamp
+ * for pagination
+ * @param {number} timestamp - Timestamp unix time
+ * @return {string}
+ */
+export function generateSnowflakeFromTimestamp(timestamp: number): string {
+  const bigInt = BigInt(timestamp - discordEpoch) << 22n;
+  return bigInt.toString();
+}
+
+/**
+ * Get avatar id
+ * @param {number} discriminator - User discriminator
+ * @return {number}
+ */
+export function getAvaterDefault(discriminator: number): number {
+  return discriminator % 5;
 }

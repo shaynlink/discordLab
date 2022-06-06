@@ -1,4 +1,4 @@
-export interface SnowflakeObject {
+export interface SnowflakeInterface {
   timestamp: number;
   internalWorkerId: number;
   internalProcessId: number;

@@ -6,7 +6,7 @@
         "declaration": true,
         "declarationMap": true,
         "declarationDir": "./typings",
-        "downlevelIteration": true,
+        "downlevelIteration": false,
         "importHelpers": true,
         "isolatedModules": false,
         "lib": ["ES5", "ES6", "es2020"],
@@ -19,7 +19,8 @@
         "strictBindCallApply": true,
         "strictFunctionTypes": true,
         "esModuleInterop": false,
-        "allowSyntheticDefaultImports": false
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
     },
     "include": ["src/**/*"]
 }
